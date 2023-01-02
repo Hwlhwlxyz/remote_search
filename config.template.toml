@@ -1,0 +1,23 @@
+[[server]]
+name = "server1"
+host = "root@ipaddress"
+user = "root"
+port = 22
+password = "password"
+command = "find . -iname {}"
+
+
+[[proxyjump]]
+name = 'proxyjump1'
+command = "find . -iname {}"
+[[proxyjump.server]]
+name = "jumpserver1"
+host = "root@ipaddress1"
+user = "root"
+port = 22
+password = "password1"
+[[proxyjump.server]]
+name = 'targetserver'
+host = 'root@ipaddress2'
+port = 22
+password = 'password2'
